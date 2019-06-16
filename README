@@ -1,0 +1,11 @@
+
+Probleme de inode resolution tmp
+
+$ sudo sysctl fs.inotify.max_user_watches=524288
+$ sudo sysctl -p
+
+resolution long terme
+
+$ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
+$ sudo sysctl -p
+
