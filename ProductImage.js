@@ -6,7 +6,7 @@ const ProductImage = props => {
 
     if (!props.currentProduct){
         return (
-            <View style={styles.panel}>
+            <View style={styles.panelHidden}>
                 <Text>Select a product first</Text>
             </View>
         );
@@ -20,11 +20,16 @@ const ProductImage = props => {
 };
 
 const styles = StyleSheet.create({
+    panelHidden: {
+        // Fill the entire surface
+        width: 280,
+        height: 280,
+        display: "none",
+    },
     panel: {
         // Fill the entire surface
         width: 280,
         height: 280,
-        backgroundColor: 'red',
         borderColor: '#303050',
         borderWidth: 2,
     },

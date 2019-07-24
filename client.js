@@ -57,6 +57,7 @@ function init(bundle, parent, options = {}) {
   const surfaceMenu = new Surface(300, 600, Surface.SurfaceShape.Flat);
   const surfaceList = new Surface(1000, 600, Surface.SurfaceShape.Flat);
   const surfaceImage = new Surface(280, 280, Surface.SurfaceShape.Flat);
+  const surfaceDescription = new Surface(500, 50, Surface.SurfaceShape.Flat);
 
   r360.renderToSurface(
       r360.createRoot('Menu', { }),
@@ -73,6 +74,12 @@ function init(bundle, parent, options = {}) {
       surfaceImage
   );
   surfaceImage.setAngle(1, 0);
+
+  r360.renderToSurface(
+      r360.createRoot('ProductDescription', { }),
+      surfaceDescription
+  );
+  surfaceDescription.setAngle(1, -0.4);
 
   // Load the initial environment
   r360.compositor.setBackground(r360.getAssetURL('360_world.jpg'));

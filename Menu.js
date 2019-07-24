@@ -6,7 +6,7 @@ const Menu = props => {
     if (!props.categories) {
         return (
             <View>
-                <Text>Failed to retrieve product list...</Text>
+                <Text>Failed to retrieve categories ...</Text>
             </View>
         );
     }
@@ -83,12 +83,12 @@ const styles = StyleSheet.create({
     },
     hello2Text: {
         borderColor: '#639dda',
-        fontSize: 50,
+        fontSize: 20,
         color: '#00FF00'
     },
     categoryButton: {
-        height: 120,
-        width: 800
+        height: 30,
+        width: "100%"
     }
 });
 

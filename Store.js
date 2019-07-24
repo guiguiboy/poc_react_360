@@ -27,39 +27,44 @@ export function initialize() {
     console.log('init');
     const categories = [
         {
-            title: 'fruits et legumes',
+            title: 'Fruits et legumes',
             key: 'fruits-legumes',
             items: [
                 {
                     title: 'Pommes',
                     ean: '3000000035542',
-                    image: 'shop/fruits-legumes/3000000035542.jpg'
+                    image: 'shop/fruits-legumes/3000000035542.jpg',
+                    description: 'This is appels',
                 },
                 {
                     title: 'Citron',
                     ean: '3276552310721',
-                    image: 'shop/fruits-legumes/3276552310721.jpg'
+                    image: 'shop/fruits-legumes/3276552310721.jpg',
+                    description: 'This is lemons',
                 },
                 {
                     title: 'Oranges',
                     ean: '3276554564504',
-                    image: 'shop/fruits-legumes/3276554564504.jpg'
+                    image: 'shop/fruits-legumes/3276554564504.jpg',
+                    description: 'This is oranges',
                 }
             ]
         },
         {
-            title: 'Viandes',
+            title: 'Viandes et poissons',
             key: 'viandes',
             items: [
                 {
                     title: 'Steaks 5%MG',
                     ean: '3245415073998',
-                    image: 'shop/viande/3245415073998.jpg'
+                    image: 'shop/viande/3245415073998.jpg',
+                    description: 'This is meat',
                 },
                 {
                     title: 'Saumon',
                     ean: '3276556976145',
-                    image: 'shop/viande/3276556976145.jpg'
+                    image: 'shop/viande/3276556976145.jpg',
+                    description: 'This is salmon',
                 },
             ]
         },
@@ -78,6 +83,13 @@ export function initialize() {
             ]
         },
     ];
+
+    categories.sort((a, b) => {
+        if (a.title > b.title) {
+            return 1;
+        }
+        return -1;
+    });
 
     State.categories = categories;
     updateComponents();
