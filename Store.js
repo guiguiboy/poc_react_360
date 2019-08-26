@@ -95,6 +95,15 @@ export function initialize() {
     updateComponents();
 }
 
+export function setNotification(notification) {
+    State.notification = notification;
+    updateComponents();
+    setTimeout(() => {
+        State.notification = null;
+        updateComponents();
+        }, 5000)
+}
+
 export function setCurrentCategory(value) {
     State.currentCategory = value;
     updateComponents();
@@ -110,14 +119,16 @@ export function connect(Component) {
         state = {
             categories: State.categories,
             currentCategory: State.currentCategory,
-            currentProduct: State.currentProduct
+            currentProduct: State.currentProduct,
+            notification: State.notification
         };
 
         _listener = () => {
             this.setState({
                 categories: State.categories,
                 currentCategory: State.currentCategory,
-                currentProduct: State.currentProduct
+                currentProduct: State.currentProduct,
+                notification: State.notification
             });
         };
 
@@ -136,6 +147,7 @@ export function connect(Component) {
                     categories={this.state.categories}
                     currentCategory={this.state.currentCategory}
                     currentProduct={this.state.currentProduct}
+                    notification={this.state.notification}
                 />
             );
         }

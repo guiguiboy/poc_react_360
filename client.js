@@ -58,6 +58,8 @@ function init(bundle, parent, options = {}) {
   const surfaceList = new Surface(1000, 600, Surface.SurfaceShape.Flat);
   const surfaceImage = new Surface(280, 280, Surface.SurfaceShape.Flat);
   const surfaceDescription = new Surface(500, 50, Surface.SurfaceShape.Flat);
+  const surfaceAdd2Cart = new Surface(60, 60, Surface.SurfaceShape.Flat);
+  const surfaceAdd2CartNotification = new Surface(200, 50, Surface.SurfaceShape.Flat);
 
   r360.renderToSurface(
       r360.createRoot('Menu', { }),
@@ -80,6 +82,18 @@ function init(bundle, parent, options = {}) {
       surfaceDescription
   );
   surfaceDescription.setAngle(1, -0.4);
+
+  r360.renderToSurface(
+      r360.createRoot('Add2Cart', { }),
+    surfaceAdd2Cart
+  );
+  surfaceAdd2Cart.setAngle(1.25, 0);
+
+  r360.renderToSurface(
+      r360.createRoot('Add2CartNotification', { }),
+      surfaceAdd2CartNotification
+  );
+  surfaceAdd2CartNotification.setAngle(1, -0.3);
 
   // Load the initial environment
   r360.compositor.setBackground(r360.getAssetURL('360_world.jpg'));

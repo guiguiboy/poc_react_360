@@ -7,9 +7,6 @@ export class BackButton extends React.Component {
 
     render() {
 
-        console.log('back button')
-        console.log(this.props)
-
         return (
             <View>
                 <VrButton onClick={() => resetCategory()}>
@@ -21,7 +18,6 @@ export class BackButton extends React.Component {
 };
 
 function resetCategory() {
-    console.log('test');
     setCurrentCategory(null);
     Environment.setBackgroundImage(
         asset('360_world.jpg'),
